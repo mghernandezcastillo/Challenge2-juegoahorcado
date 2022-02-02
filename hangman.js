@@ -174,10 +174,8 @@ addButton.addEventListener("click", addNewWord);
 showWordsListLink.addEventListener("click", showWordsList);
 
 // Check if the letter is correct or not
-  document.onkeyup = (e) => {
-  let key_code = e.keyCode || e.which;
-  let keyPressed = String.fromCharCode(key_code);
-  console.log(keyPressed);
+  document.onkeydown = function(e) {
+    let keyPressed = e.key;
    // letter to uppercase
    let letter = keyPressed.toUpperCase();
 
