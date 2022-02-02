@@ -174,12 +174,12 @@ addButton.addEventListener("click", addNewWord);
 showWordsListLink.addEventListener("click", showWordsList);
 
 // Check if the letter is correct or not
-  document.onkeydown = function(e) {
-    let keyPressed = e.key;
-   // letter to uppercase
-   let letter = keyPressed.toUpperCase();
+  document.addEventListener("keydown", (e) => {
+ // Detect the key pressed in android devices and use the keycode
+alert(e.keyCode);
 
-  // If click in Mobile keyboard
+  let letter = "i"
+
   if (checkLetter(letter)) {
     for (let i = 0; i < word.length; i++) {
       if (word[i] === letter) {
@@ -205,4 +205,4 @@ showWordsListLink.addEventListener("click", showWordsList);
   if (checkIfLost()) {
     drawLostMessage();
   }
-};
+});
