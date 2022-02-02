@@ -1,6 +1,6 @@
 // variables and constants for the game
 let word = "";
-let fontSize = 100;
+let fontSize = 70;
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
 let failsCounter = 0;
@@ -46,7 +46,7 @@ const drawSpaces = (word) => {
     ctx.textAlign = "center";
     ctx.fillText(
       "_",
-      i * 100 + (canvasWidth - word.length * fontSize) / 2 + 50,
+      i * 70 + (canvasWidth - word.length * fontSize) / 2 + 50,
       canvasHeight - 300
     );
   }
@@ -173,7 +173,7 @@ document.addEventListener("keypress", (e) => {
         ctx.textAlign = "center";
         ctx.fillText(
           letter,
-          i * 100 + (canvasWidth - word.length * fontSize) / 2 + 50,
+          i * 70 + (canvasWidth - word.length * fontSize) / 2 + 50,
           canvasHeight - 300
         );
         addLetterInWritedLetters(letter);

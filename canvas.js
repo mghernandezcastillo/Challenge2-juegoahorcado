@@ -108,7 +108,7 @@ const drawFail = (flag, letter) => {
 
 const drawWinMessage = () => {
   // draw the win message
-  ctx.fillStyle = "#00f000";
+  ctx.fillStyle = "darkgreen";
   ctx.font = `${fontSize}px Arial`;
   ctx.textAlign = "center";
   ctx.fillText("You Won!", 900, canvasHeight / 4);
