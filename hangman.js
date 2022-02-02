@@ -58,7 +58,6 @@ const start = () => {
   word = randomWord();
   drawSpaces(word);
   drawFloor();
-  console.log(word);
   window.scrollTo(0, 100);
   gameStarted = true;
 };
@@ -73,7 +72,6 @@ const addNewWord = () => {
   let newWord = inputNewWord.value;
   words.push(newWord);
   inputNewWord.value = "";
-  console.log(words);
   showWordsList();
 };
 
@@ -177,8 +175,13 @@ showWordsListLink.addEventListener("click", showWordsList);
 
 // Check if the letter is correct or not
 document.addEventListener("keypress", (e) => {
+  const currentCode = e.keyCode;
+  let currentkey = e.key;
+  if(currentkey) {
+    currentkey = String.fromCharCode(currentCode);
+  }
   // letter to uppercase
-  let letter = e.key.toUpperCase();
+  let letter = currentkey.toUpperCase();
 
   // If click in Mobile keyboard
   if (checkLetter(letter)) {
@@ -197,39 +200,6 @@ document.addEventListener("keypress", (e) => {
       }
     }
 
-    console.log(writedLetters);
-  }
-  drawFail(checkLetter(letter), letter);
-
-  if (checkIfWon()) {
-    drawWinMessage();
-  }
-  if (checkIfLost()) {
-    drawLostMessage();
-  }
-});
-
-
-// Check if the letter is correct or not whith Mobile keyboard
-document.addEventListener("keydown", (e) => {
-  let letter = e.key.toUpperCase();
-  if (checkLetter(letter)) {
-    for (let i = 0; i < word.length; i++) {
-      if (word[i] === letter) {
-        hit = true;
-        ctx.fillStyle = "#000";
-        ctx.font = `${fontSize}px Arial`;
-        ctx.textAlign = "center";
-        ctx.fillText(
-          letter,
-          i * 70 + (canvasWidth - word.length * fontSize) / 2 + 50,
-          canvasHeight - 300
-        );
-        addLetterInWritedLetters(letter);
-      }
-    }
-
-    console.log(writedLetters);
   }
   drawFail(checkLetter(letter), letter);
 
