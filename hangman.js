@@ -176,7 +176,12 @@ showWordsListLink.addEventListener("click", showWordsList);
 // Check if the letter is correct or not
   document.addEventListener("keydown", (e) => {
  // Detect the key pressed in android devices and use the keycode
-alert(e.keyCode);
+
+  var keyCode = e.keyCode || e.which;
+  if (keyCode == 0 || keyCode == 229) { 
+      keyCode = e.target.value.charAt(e.target.selectionStart - 1).charCodeAt(); 
+      alert(keyCode);           
+  }
 
   let letter = "i"
 
