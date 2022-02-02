@@ -148,17 +148,20 @@ function openKeyBoard(){
   let dummyInput = document.createElement("input");
   dummyInput.setAttribute("type", "text");
   dummyInput.setAttribute("id", "dummy_input");
-  dummyInput.setAttribute("style", "position: absolute; top: -100px;");
+  dummyInput.setAttribute("style", "position: absolute; top: 0px;");
   document.body.appendChild(dummyInput);
   dummyInput.focus();
 }
 
-openKeyBoard();
 
 
-console.log(openKeyBoard());
 
 // Event Listeners
+
+// open the keyboard when the user click on the canvas
+canvas.addEventListener("click", () => {
+  openKeyBoard();
+});
 
 // Start Game
 startButton.addEventListener("click", start);
