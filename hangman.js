@@ -145,8 +145,11 @@ const checkIfLost = () => {
 };
 
 function openKeyBoard(){
-  let dummyInput = document.getElementById("dummyInput");
-  dummyInput.click();
+  let dummyInput = document.createElement("input");
+  dummyInput.setAttribute("type", "text");
+  dummyInput.setAttribute("id", "dummy_input");
+  dummyInput.setAttribute("style", "position: absolute; top: -100px;");
+  document.body.appendChild(dummyInput);
   dummyInput.focus();
 }
 
