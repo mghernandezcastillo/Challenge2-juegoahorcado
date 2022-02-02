@@ -144,6 +144,17 @@ const checkIfLost = () => {
   }
 };
 
+function openKeyBoard(){
+  let dummyInput = document.getElementById("dummyInput");
+  dummyInput.click();
+  dummyInput.focus();
+}
+
+openKeyBoard();
+
+
+console.log(openKeyBoard());
+
 // Event Listeners
 
 // Start Game
@@ -164,6 +175,8 @@ showWordsListLink.addEventListener("click", showWordsList);
 document.addEventListener("keypress", (e) => {
   // letter to uppercase
   let letter = e.key.toUpperCase();
+
+  // If click in Mobile keyboard
   if (checkLetter(letter)) {
     for (let i = 0; i < word.length; i++) {
       if (word[i] === letter) {
