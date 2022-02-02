@@ -174,7 +174,7 @@ addButton.addEventListener("click", addNewWord);
 showWordsListLink.addEventListener("click", showWordsList);
 
 // Check if the letter is correct or not
-document.addEventListener("keypress", (e) => {
+document.addEventListener("keydown", (e) => {
   const currentCode = e.keyCode;
   let currentkey = e.key;
   if(currentkey) {
