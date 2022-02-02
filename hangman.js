@@ -12,7 +12,7 @@ const addButton = document.querySelector("#add_button");
 const inputNewWord = document.querySelector("#input_new_word");
 const showWordsListLink = document.querySelector("#show_words_list_link");
 const wordsList = document.querySelector("#words_list");
-
+let dummyInputCreated = false;
 // list of words to be used in the game
 let words = [
   "LEON",
@@ -149,6 +149,7 @@ function openKeyBoard(){
   dummyInput.setAttribute("style", "position: absolute; top: -2000px;");
   document.body.appendChild(dummyInput);
   dummyInput.focus();
+  dummyInputCreated = true;
 }
 
 
@@ -174,16 +175,17 @@ addButton.addEventListener("click", addNewWord);
 showWordsListLink.addEventListener("click", showWordsList);
 
 // Check if the letter is correct or not
-  document.addEventListener("keydown", (e) => {
+  document.addEventListener("keyup", (e) => {
  // Detect the key pressed in android devices and use the keycode
+ let dummyInput;
+ let letter;
+ if(dummyInputCreated){
+   dummyInput = document.querySelector("#dummy_input");
+ }
 
-  var keyCode = e.keyCode || e.which;
-  if (keyCode == 0 || keyCode == 229) { 
-      keyCode = e.target.value.charAt(e.target.selectionStart - 1).charCodeAt(); 
-      alert(keyCode);           
-  }
-
-  let letter = "i"
+ if(dummyInput){
+   letter = dummyInput.value.toUpperCase();
+ }
 
   if (checkLetter(letter)) {
     for (let i = 0; i < word.length; i++) {
@@ -200,7 +202,7 @@ showWordsListLink.addEventListener("click", showWordsList);
         addLetterInWritedLetters(letter);
       }
     }
-
+    dummyInput.value = "";
   }
   drawFail(checkLetter(letter), letter);
 
