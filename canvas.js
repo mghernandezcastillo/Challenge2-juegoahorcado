@@ -118,7 +118,7 @@ const drawWinMessage = () => {
   ctx.fillStyle = "darkgreen";
   // comprobe if mobile
   if (window.innerWidth < 600) {
-    ctx.font = `${fontSize + 30}px Arial`;
+    ctx.font = `${fontSize + 30}px Amatic SC, cursive`;
   } else {
   ctx.font = `bold ${fontSize}px Amatic SC, cursive`;
   }
