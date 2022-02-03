@@ -185,7 +185,7 @@ body {
 .you_repeated_letter_message_show {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 54%;
   transform: translate(-50%, -50%);
   width: 100%;
   z-index: 1;
