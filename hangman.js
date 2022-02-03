@@ -192,8 +192,7 @@ document.addEventListener("keyup", (e) => {
     letter = dummyInput.value.toUpperCase();
   }
 
-  if (checkLetter(letter)) {
-    alert("Correct");
+  if (true) {
     for (let i = 0; i < word.length; i++) {
       if (word[i] === letter) {
         hit = true;
