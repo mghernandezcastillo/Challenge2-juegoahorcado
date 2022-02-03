@@ -116,7 +116,12 @@ const drawFail = (flag, letter) => {
 const drawWinMessage = () => {
   // draw the win message
   ctx.fillStyle = "darkgreen";
+  // comprobe if mobile
+  if (window.innerWidth < 600) {
+    ctx.font = `${fontSize * 2}px Arial`;
+  } else {
   ctx.font = `bold ${fontSize}px Amatic SC, cursive`;
+  }
   ctx.textAlign = "center";
   ctx.fillText("Ganaste!", 900, canvasHeight / 4);
   if (gameStarted) {
@@ -127,7 +132,12 @@ const drawWinMessage = () => {
 const drawLostMessage = () => {
   // draw lost message
   ctx.fillStyle = "#ff0000";
+  // comprobe if mobile
+  if (window.innerWidth < 600) {
+    ctx.font = `${fontSize * 2}px Amatic SC, cursive`;
+  } else {
   ctx.font = `bold ${fontSize}px Amatic SC, cursive`;
+  }
   ctx.textAlign = "center";
   ctx.fillText("Fin del Juego!", 900, canvasHeight / 4);
   ctx.fillStyle = "#000";
