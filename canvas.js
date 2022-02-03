@@ -111,7 +111,7 @@ const drawWinMessage = () => {
   ctx.fillStyle = "darkgreen";
   ctx.font = `${fontSize}px Arial`;
   ctx.textAlign = "center";
-  ctx.fillText("Felicidades Ganaste!", 900, canvasHeight / 4);
+  ctx.fillText("Ganaste!", 900, canvasHeight / 4);
   if (gameStarted) {
     createRestartButton();
   }
