@@ -14,21 +14,8 @@ const showWordsListLink = document.querySelector("#show_words_list_link");
 const wordsList = document.querySelector("#words_list");
 let dummyInputCreated = false;
 // list of words to be used in the game
-let words = [
-  "LEON",
-  "TIGRE",
-  "ELEFANTE",
-  "GATO",
-  "CABALLO",
-  "PERRO",
-  "CABRA",
-  "CERDO",
-  "RATON",
-  "MONO",
-  "BALLENA",
-  "JIRAFA",
-  "COCODRILO",
-];
+//transform all words in array to uppercase
+const words = bancoDePalabras.map((word) => word.toUpperCase());
 
 // Functions
 
