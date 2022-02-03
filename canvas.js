@@ -111,7 +111,7 @@ const drawWinMessage = () => {
   ctx.fillStyle = "darkgreen";
   ctx.font = `${fontSize}px Arial`;
   ctx.textAlign = "center";
-  ctx.fillText("You Won!", 900, canvasHeight / 4);
+  ctx.fillText("Felicidades Ganaste!", 900, canvasHeight / 4);
   if (gameStarted) {
     createRestartButton();
   }
@@ -122,7 +122,7 @@ const drawLostMessage = () => {
   ctx.fillStyle = "#ff0000";
   ctx.font = `${fontSize}px Arial`;
   ctx.textAlign = "center";
-  ctx.fillText("End Game!", 900, canvasHeight / 4);
+  ctx.fillText("Fin del Juego!", 900, canvasHeight / 4);
   ctx.fillStyle = "#000";
   ctx.font = `45px Arial`;
   ctx.textAlign = "center";

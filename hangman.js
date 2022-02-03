@@ -96,7 +96,7 @@ const inputToUppercase = (input) => {
 const createRestartButton = () => {
   // create Restart Button in front of the canvas
   const restartButton = document.createElement("button");
-  restartButton.innerHTML = "Restart";
+  restartButton.innerHTML = "Reiniciar";
   restartButton.classList.add("restart_button");
   restartButton.style.display = "inherit";
   restartButton.addEventListener("click", () => {
