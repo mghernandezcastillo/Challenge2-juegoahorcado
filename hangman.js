@@ -29,7 +29,7 @@ const randomWord = () => {
 const drawSpaces = (word) => {
   // draw "_" for each letter in the word in the canvas
   for (let i = 0; i < word.length; i++) {
-    ctx.fillStyle = "darkblue";
+    ctx.fillStyle = "darkgrey";
     ctx.font = `${fontSize}px Arial`;
     ctx.textAlign = "center";
     ctx.fillText(
