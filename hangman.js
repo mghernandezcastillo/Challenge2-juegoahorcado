@@ -175,7 +175,7 @@ function openKeyBoard() {
     let dummyInput = document.createElement("input");
     dummyInput.setAttribute("type", "text");
     dummyInput.setAttribute("id", "dummy_input");
-    dummyInput.setAttribute("style", "position: fixed; top: -2000px;");
+    dummyInput.setAttribute("style", "position: fixed; right: -2000px;");
     document.body.appendChild(dummyInput);
     dummyInput.focus();
     dummyInputCreated = true;
