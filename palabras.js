@@ -69,7 +69,7 @@ const bancoDePalabras = [
     "Tumba",
     "Envasado",
     "Cuchillo",
-    "República",
+    "Republica",
     "Adivino",
     "Francia",
     "Seis",
