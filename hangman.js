@@ -125,7 +125,6 @@ const checkLetter = (letter) => {
   }
 
   // comprobe if mobile
-  if (window.innerWidth < 600) {
 
   if (correct) {
     you_are_acerted_message.style.display = "inherit";
@@ -139,7 +138,6 @@ const checkLetter = (letter) => {
     setTimeout(() => {
       you_are_wrong_message.style.display = "none";
     }, 800);
-  }
   }
 
   return correct;
