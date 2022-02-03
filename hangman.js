@@ -12,6 +12,7 @@ const addButton = document.querySelector("#add_button");
 const inputNewWord = document.querySelector("#input_new_word");
 const showWordsListLink = document.querySelector("#show_words_list_link");
 const wordsList = document.querySelector("#words_list");
+const startedMessage = document.querySelector("#started_message");
 let dummyInputCreated = false;
 // list of words to be used in the game
 //transform all words in array to uppercase
@@ -45,10 +46,17 @@ const start = () => {
   word = randomWord();
   drawSpaces(word);
   drawFloor();
-  window.scrollTo(0, 100);
   gameStarted = true;
   openKeyBoard();
   let dummyInput = document.querySelector("#dummy_input").focus();
+  startedMessage.classList.add("started_message_show");
+  setTimeout(() => {
+    startedMessage.classList.remove("started_message_show");
+    startedMessage.innerHTML = "";
+  }
+  , 1000);
+  window.scrollTo(0, 120);
+  
 };
 
 const restart = () => {
