@@ -6,6 +6,7 @@ const container = document.querySelector(".container");
 
 // Functions
 
+
 const showCanvas = () => {
   // show canvas
   canvas.style.display = "block";
@@ -55,10 +56,9 @@ const drawFailsLetters = (word) => {
 };
 
 // Functions to draw the hangman
-const drawFloor = () => drawRect((canvasWidth - 400) / 2, 400, 400, 10, "#000");
+const drawFloor = () =>  drawRect((canvasWidth - 400) / 2, 400, 400, 10, "#000");
 
-const drawTrunk = () =>
-  drawRect((canvasWidth - 400) / 2, 400, 10, -370, "#000");
+const drawTrunk = () => drawRect((canvasWidth - 400) / 2, 400, 10, -370, "#000");
 
 const drawRoof = () => drawRect((canvasWidth - 400) / 2, 30, 250, -10, "#000");
 
@@ -85,19 +85,21 @@ const drawFirstArm = () => drawLine(canvasWidth / 2, 164, 550, 240);
 
 const drawSecondArm = () => drawLine(canvasWidth / 2, 164, 650, 240);
 
+
+
 const drawFail = (flag, letter) => {
   // draw the hangman when the user fails
   if (!flag && failLetters.includes(letter) === false) {
     failsCounter++;
-    failsCounter === 1 ? drawTrunk() : null;
-    failsCounter === 2 ? drawRoof() : null;
-    failsCounter === 3 ? drawRope() : null;
-    failsCounter === 4 ? drawHead() : null;
-    failsCounter === 5 ? drawBody() : null;
-    failsCounter === 6 ? drawFirstLeg() : null;
-    failsCounter === 7 ? drawSecondLeg() : null;
-    failsCounter === 8 ? drawFirstArm() : null;
-    failsCounter === 9 ? drawSecondArm() : null;
+    failsCounter===1 ? drawTrunk() : null;
+    failsCounter===2 ? drawRoof() : null;
+    failsCounter===3 ? drawRope() : null;
+    failsCounter===4 ? drawHead() : null;
+    failsCounter===5 ? drawBody() : null;
+    failsCounter===6 ? drawFirstLeg() : null;
+    failsCounter===7 ? drawSecondLeg() : null;
+    failsCounter===8 ? drawFirstArm() : null;
+    failsCounter===9 ? drawSecondArm() : null;
     failLetters += letter;
     drawFailsLetters(failLetters.split("").join(" "));
   }
@@ -128,3 +130,5 @@ const drawLostMessage = () => {
     createRestartButton();
   }
 };
+
+
