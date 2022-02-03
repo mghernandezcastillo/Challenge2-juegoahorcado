@@ -144,18 +144,23 @@ const checkIfLost = () => {
   }
 };
 
-function openKeyBoard(){
- if(!dummyInputCreated){
-  let dummyInput = document.createElement("input");
-  dummyInput.setAttribute("type", "text");
-  dummyInput.setAttribute("id", "dummy_input");
-  dummyInput.setAttribute("style", "position: absolute; top: -2000px;");
-  document.body.appendChild(dummyInput);
-  dummyInput.focus();
-  dummyInputCreated = true;
- }
-}
+function openKeyBoard() {
+  if (!dummyInputCreated) {
+    let dummyInput = document.createElement("input");
+    dummyInput.setAttribute("type", "text");
+    dummyInput.setAttribute("id", "dummy_input");
+    dummyInput.setAttribute("style", "position: absolute; top: -2000px;");
+    document.body.appendChild(dummyInput);
+    dummyInput.focus();
+    dummyInputCreated = true;
+  }
+};
 
+function focusOnDummyInput() {
+  let dummyInput = document.querySelector("#dummy_input");
+  dummyInput.focus();
+  alert("Pulsa una tecla para continuar");
+};
 
 // Event Listeners
 
@@ -180,13 +185,13 @@ addButton.addEventListener("click", addNewWord);
 showWordsListLink.addEventListener("click", showWordsList);
 
 // Check if the letter is correct or not
-  document.addEventListener("keyup", (e) => {
- // Detect the key pressed in android devices and use the keycode
- let letter;
- let dummyInput = document.querySelector("#dummy_input");
- if(dummyInput){
-   letter = dummyInput.value.toUpperCase();
- }
+document.addEventListener("keyup", (e) => {
+  // Detect the key pressed in android devices and use the keycode
+  let letter;
+  let dummyInput = document.querySelector("#dummy_input");
+  if (dummyInput) {
+    letter = dummyInput.value.toUpperCase();
+  }
 
   if (checkLetter(letter)) {
     for (let i = 0; i < word.length; i++) {
@@ -213,5 +218,5 @@ showWordsListLink.addEventListener("click", showWordsList);
   if (checkIfLost()) {
     drawLostMessage();
   }
- dummyInput.focus();
+  focusOnDummyInput();
 });
