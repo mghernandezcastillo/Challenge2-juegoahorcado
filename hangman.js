@@ -205,6 +205,7 @@ document.addEventListener("keyup", (e) => {
           canvasHeight - 300
         );
         addLetterInWritedLetters(letter);
+        focusOnDummyInput();
       }
     }
   }
@@ -217,5 +218,4 @@ document.addEventListener("keyup", (e) => {
   if (checkIfLost()) {
     drawLostMessage();
   }
-  canvas.click();
 });
