@@ -102,7 +102,10 @@ const drawFail = (flag, letter) => {
     failsCounter===8 ? drawFirstArm() : null;
     failsCounter===9 ? drawSecondArm() : null;
     failLetters += letter;
-    drawFailsLetters(failLetters.split("").join(" "));
+    // delete the repeated letters in the array
+    failLetters = failLetters.split("").filter((item, index, array) => array.indexOf(item) === index);
+    
+    drawFailsLetters(failLetters.join(" "));
   }
 };
 
