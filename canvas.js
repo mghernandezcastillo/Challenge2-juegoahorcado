@@ -19,7 +19,7 @@ const hideContainer = () => {
 
 const fillCanvas = () => {
   // fill canvas
-  ctx.fillStyle = "#c5d4e6";
+  ctx.fillStyle = "lightblue";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 };
 
@@ -51,7 +51,7 @@ const drawFailsLetters = (word) => {
   drawRect(0, canvasHeight - 265, canvasWidth, canvasHeight, "#c5d4e6");
 
   ctx.fillStyle = "gray";
-  ctx.font = `${fontSize}px Arial`;
+  ctx.font = `${fontSize}px Press Start 2P`;
   ctx.textAlign = "center";
   ctx.fillText(word, canvasWidth / 2, canvasHeight - 190);
 };
@@ -109,7 +109,7 @@ const drawFail = (flag, letter) => {
 const drawWinMessage = () => {
   // draw the win message
   ctx.fillStyle = "darkgreen";
-  ctx.font = `${fontSize}px Arial`;
+  ctx.font = `${fontSize}px Press Start 2P`;
   ctx.textAlign = "center";
   ctx.fillText("Ganaste!", 900, canvasHeight / 4);
   if (gameStarted) {
@@ -120,11 +120,11 @@ const drawWinMessage = () => {
 const drawLostMessage = () => {
   // draw lost message
   ctx.fillStyle = "#ff0000";
-  ctx.font = `${fontSize}px Arial`;
+  ctx.font = `${fontSize}px Press Start 2P`;
   ctx.textAlign = "center";
   ctx.fillText("Fin del Juego!", 900, canvasHeight / 4);
   ctx.fillStyle = "#000";
-  ctx.font = `45px Arial`;
+  ctx.font = `45px Press Start 2P`;
   ctx.textAlign = "center";
   ctx.fillText(`La palabra era: ${word}`, 900, canvasHeight / 4 + 100);
   if (gameStarted) {

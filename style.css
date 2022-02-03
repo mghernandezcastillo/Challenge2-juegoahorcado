@@ -1,6 +1,8 @@
 * {
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  /* game font */
+  font-family: 'Press Start 2P', cursive;
+  
 }
 
 body {
