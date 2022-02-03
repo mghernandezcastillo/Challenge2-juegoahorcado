@@ -213,10 +213,9 @@ document.addEventListener("keyup", (e) => {
 
   if (checkIfWon()) {
     drawWinMessage();
-    focusOnDummyInput();
   }
   if (checkIfLost()) {
     drawLostMessage();
-    focusOnDummyInput();
   }
+  canvas.click();
 });
