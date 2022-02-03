@@ -46,10 +46,10 @@ const drawLine = (x1, y1, x2, y2) => {
 };
 
 const drawFailsLetters = (word) => {
-  // draw the letters that the user has already used
   ctx.clearRect(0, canvasHeight - 265, canvasWidth, canvasHeight);
   drawRect(0, canvasHeight - 265, canvasWidth, canvasHeight, "lightblue");
-
+  drawYouAreWrong();
+  // draw the letters that the user has already used
   ctx.fillStyle = "gray";
   ctx.font = `${fontSize}px Arial`;
   ctx.textAlign = "center";
@@ -105,6 +105,45 @@ const drawFail = (flag, letter) => {
     drawFailsLetters(failLetters.split("").join(" "));
   }
 };
+
+// draw you are accepted message
+const drawYouAreAccerted = () => {
+  ctx.clearRect(0, canvasHeight - 150, canvasWidth, canvasHeight);
+  drawRect(0, canvasHeight - 150, canvasWidth, canvasHeight, "lightblue");
+  // coprobe if mobile
+  if (window.innerWidth < 600) {
+    ctx.clearRect(0, canvasHeight - 250, canvasWidth, canvasHeight);
+    drawRect(0, canvasHeight - 250, canvasWidth, canvasHeight, "lightblue");
+  } 
+  ctx.fillStyle = "darkgreen";
+  ctx.font = `${fontSize}px Arial`;
+  ctx.textAlign = "center";
+  
+  if (window.innerWidth < 600) {
+    ctx.fillText("Acertaste!", canvasWidth / 2, canvasHeight - 200);
+  } else {
+    ctx.fillText("Acertaste!", canvasWidth / 2, canvasHeight - 100);
+  }
+};
+
+const drawYouAreWrong = () => {
+  ctx.clearRect(0, canvasHeight - 265, canvasWidth, canvasHeight);
+  drawRect(0, canvasHeight - 265, canvasWidth, canvasHeight, "lightblue");
+  // coprobe if mobile
+  if (window.innerWidth < 600) {
+    ctx.clearRect(0, canvasHeight - 250, canvasWidth, canvasHeight);
+    drawRect(0, canvasHeight - 250, canvasWidth, canvasHeight, "lightblue");
+  } 
+  ctx.fillStyle = "darkred";
+  ctx.font = `${fontSize}px Arial`;
+  ctx.textAlign = "center";
+  if (window.innerWidth < 600) {
+    ctx.fillText("Fallaste!", canvasWidth / 2, canvasHeight - 200);
+  } else {
+    ctx.fillText("Fallaste!", canvasWidth / 2, canvasHeight - 100);
+  }
+};
+
 
 const drawWinMessage = () => {
   // draw the win message
