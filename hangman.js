@@ -144,7 +144,7 @@ const checkLetter = (letter) => {
       you_are_acerted_message.style.display = "none";
     }, 800);
   }
-  else if (!correct && failLetters.includes(letter) === false) {
+  else if (!correct && failLetters.includes(letter) === false &&gameStarted) {
     you_are_wrong_message.style.display = "inherit";
     you_are_wrong_message.classList.add("you_are_wrong_message_show");
     setTimeout(() => {
