@@ -154,12 +154,17 @@ function openKeyBoard() {
     dummyInput.focus();
     dummyInputCreated = true;
   }
+}
+
+function closeKeyBoard() {
+  let dummyInput = document.querySelector("#dummy_input");
+  dummyInput.blur();
 };
 
 function focusOnDummyInput() {
   let dummyInput = document.querySelector("#dummy_input");
   dummyInput.focus();
-};
+}
 
 // Event Listeners
 
@@ -192,6 +197,7 @@ document.addEventListener("keyup", (e) => {
     letter = dummyInput.value.toUpperCase();
   }
 
+  if (checkLetter(letter)) {
     for (let i = 0; i < word.length; i++) {
       if (word[i] === letter) {
         hit = true;
@@ -206,6 +212,7 @@ document.addEventListener("keyup", (e) => {
         addLetterInWritedLetters(letter);
       }
     }
+  }
   dummyInput.value = "";
   drawFail(checkLetter(letter), letter);
 
@@ -215,7 +222,5 @@ document.addEventListener("keyup", (e) => {
   if (checkIfLost()) {
     drawLostMessage();
   }
+  closeKeyBoard();
 });
-
-
-
