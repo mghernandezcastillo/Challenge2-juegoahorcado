@@ -155,14 +155,13 @@ body {
   transform: translate(-50%, -50%);
   width: 100%;
   z-index: 1;
-  background-Color: rgba(23, 194, 66, 0.644);
   border: none;
   cursor: pointer;
   font-size: 50px;
-  color: #ffffff;
+  color: #1ca728;
   font-family: Arial;
   text-align: center;
-  line-height: 100px;
+  line-height: 38px;
   transition: all 0.4s ease-in-out;
 }
 
@@ -173,14 +172,13 @@ body {
   transform: translate(-50%, -50%);
   width: 100%;
   z-index: 1;
-  background-Color: rgba(131, 14, 49, 0.644);
   border: none;
   cursor: pointer;
   font-size: 50px;
-  color: #ffffff;
+  color: #a81919;
   font-family: Arial;
   text-align: center;
-  line-height: 100px;
+  line-height: 38px;
   transition: all 0.4s ease-in-out;
 }
 
