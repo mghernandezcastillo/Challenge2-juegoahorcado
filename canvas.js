@@ -103,7 +103,6 @@ const drawFail = (flag, letter) => {
     failsCounter===9 ? drawSecondArm() : null;
     failLetters += letter;
     drawFailsLetters(failLetters.split("").join(" "));
-    focusOnDummyInput();
   }
 };
 
