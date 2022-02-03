@@ -6,7 +6,6 @@ const container = document.querySelector(".container");
 
 // Functions
 
-
 const showCanvas = () => {
   // show canvas
   canvas.style.display = "block";
@@ -48,7 +47,6 @@ const drawLine = (x1, y1, x2, y2) => {
 const drawFailsLetters = (word) => {
   ctx.clearRect(0, canvasHeight - 265, canvasWidth, canvasHeight);
   drawRect(0, canvasHeight - 265, canvasWidth, canvasHeight, "lightblue");
-  drawYouAreWrong();
   // draw the letters that the user has already used
   ctx.fillStyle = "gray";
   ctx.font = `${fontSize}px Arial`;
@@ -57,9 +55,10 @@ const drawFailsLetters = (word) => {
 };
 
 // Functions to draw the hangman
-const drawFloor = () =>  drawRect((canvasWidth - 400) / 2, 400, 400, 10, "#000");
+const drawFloor = () => drawRect((canvasWidth - 400) / 2, 400, 400, 10, "#000");
 
-const drawTrunk = () => drawRect((canvasWidth - 400) / 2, 400, 10, -370, "#000");
+const drawTrunk = () =>
+  drawRect((canvasWidth - 400) / 2, 400, 10, -370, "#000");
 
 const drawRoof = () => drawRect((canvasWidth - 400) / 2, 30, 250, -10, "#000");
 
@@ -86,64 +85,23 @@ const drawFirstArm = () => drawLine(canvasWidth / 2, 164, 550, 240);
 
 const drawSecondArm = () => drawLine(canvasWidth / 2, 164, 650, 240);
 
-
-
 const drawFail = (flag, letter) => {
   // draw the hangman when the user fails
   if (!flag && failLetters.includes(letter) === false) {
     failsCounter++;
-    failsCounter===1 ? drawTrunk() : null;
-    failsCounter===2 ? drawRoof() : null;
-    failsCounter===3 ? drawRope() : null;
-    failsCounter===4 ? drawHead() : null;
-    failsCounter===5 ? drawBody() : null;
-    failsCounter===6 ? drawFirstLeg() : null;
-    failsCounter===7 ? drawSecondLeg() : null;
-    failsCounter===8 ? drawFirstArm() : null;
-    failsCounter===9 ? drawSecondArm() : null;
+    failsCounter === 1 ? drawTrunk() : null;
+    failsCounter === 2 ? drawRoof() : null;
+    failsCounter === 3 ? drawRope() : null;
+    failsCounter === 4 ? drawHead() : null;
+    failsCounter === 5 ? drawBody() : null;
+    failsCounter === 6 ? drawFirstLeg() : null;
+    failsCounter === 7 ? drawSecondLeg() : null;
+    failsCounter === 8 ? drawFirstArm() : null;
+    failsCounter === 9 ? drawSecondArm() : null;
     failLetters += letter;
     drawFailsLetters(failLetters.split("").join(" "));
   }
 };
-
-// draw you are accepted message
-const drawYouAreAccerted = () => {
-  ctx.clearRect(0, canvasHeight - 150, canvasWidth, canvasHeight);
-  drawRect(0, canvasHeight - 150, canvasWidth, canvasHeight, "lightblue");
-  // coprobe if mobile
-  if (window.innerWidth < 600) {
-    ctx.clearRect(0, canvasHeight - 250, canvasWidth, canvasHeight);
-    drawRect(0, canvasHeight - 250, canvasWidth, canvasHeight, "lightblue");
-  } 
-  ctx.fillStyle = "darkgreen";
-  ctx.font = `${fontSize}px Arial`;
-  ctx.textAlign = "center";
-  
-  if (window.innerWidth < 600) {
-    ctx.fillText("Acertaste!", canvasWidth / 2, canvasHeight - 200);
-  } else {
-    ctx.fillText("Acertaste!", canvasWidth / 2, canvasHeight - 100);
-  }
-};
-
-const drawYouAreWrong = () => {
-  ctx.clearRect(0, canvasHeight - 265, canvasWidth, canvasHeight);
-  drawRect(0, canvasHeight - 265, canvasWidth, canvasHeight, "lightblue");
-  // coprobe if mobile
-  if (window.innerWidth < 600) {
-    ctx.clearRect(0, canvasHeight - 250, canvasWidth, canvasHeight);
-    drawRect(0, canvasHeight - 250, canvasWidth, canvasHeight, "lightblue");
-  } 
-  ctx.fillStyle = "darkred";
-  ctx.font = `${fontSize}px Arial`;
-  ctx.textAlign = "center";
-  if (window.innerWidth < 600) {
-    ctx.fillText("Fallaste!", canvasWidth / 2, canvasHeight - 200);
-  } else {
-    ctx.fillText("Fallaste!", canvasWidth / 2, canvasHeight - 100);
-  }
-};
-
 
 const drawWinMessage = () => {
   // draw the win message
@@ -170,5 +128,3 @@ const drawLostMessage = () => {
     createRestartButton();
   }
 };
-
-

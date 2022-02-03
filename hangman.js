@@ -118,8 +118,6 @@ const checkLetter = (letter) => {
   let correct = false;
   for (let i = 0; i < word.length; i++) {
     if (word[i] === letter && failLetters.includes(letter) === false) {
-
-      drawYouAreAccerted();
       correct = true;
     }
   }
