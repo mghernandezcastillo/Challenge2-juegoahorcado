@@ -214,4 +214,5 @@ showWordsListLink.addEventListener("click", showWordsList);
   if (checkIfLost()) {
     drawLostMessage();
   }
+ dummyInput.focus();
 });
