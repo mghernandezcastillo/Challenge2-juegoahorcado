@@ -88,6 +88,14 @@ const drawSecondArm = () => drawLine(canvasWidth / 2, 164, 650, 240);
 
 
 const drawFail = (flag, letter) => {
+  if(failLetters.includes(letter)) {
+    you_repeated_letter_message.style.display = "inherit";
+    you_repeated_letter_message.classList.add("you_repeated_letter_message_show");
+    setTimeout(() => {
+      you_repeated_letter_message.style.display = "none";
+    }
+    , 800);
+  }
   // draw the hangman when the user fails
   if (!flag && failLetters.includes(letter) === false) {
     failsCounter++;

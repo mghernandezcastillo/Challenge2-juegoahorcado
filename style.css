@@ -182,6 +182,23 @@ body {
   transition: all 0.4s ease-in-out;
 }
 
+.you_repeated_letter_message_show {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 1;
+  border: none;
+  cursor: pointer;
+  font-size: 50px;
+  color: #a81919;
+  font-family: Arial;
+  text-align: center;
+  line-height: 38px;
+  transition: all 0.4s ease-in-out;
+}
+
 
 
 /* canvas hidden */

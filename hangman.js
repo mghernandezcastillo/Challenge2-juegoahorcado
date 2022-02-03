@@ -13,8 +13,13 @@ const inputNewWord = document.querySelector("#input_new_word");
 const showWordsListLink = document.querySelector("#show_words_list_link");
 const wordsList = document.querySelector("#words_list");
 const startedMessage = document.querySelector("#started_message");
-const you_are_acerted_message = document.querySelector("#you_are_acerted_message");
+const you_are_acerted_message = document.querySelector(
+  "#you_are_acerted_message"
+);
 const you_are_wrong_message = document.querySelector("#you_are_wrong_message");
+const you_repeated_letter_message = document.querySelector(
+  "#you_repeated_letter_message"
+);
 let dummyInputCreated = false;
 // list of words to be used in the game
 //transform all words in array to uppercase
@@ -43,7 +48,7 @@ const drawSpaces = (word) => {
 };
 const start = () => {
   // start the game
-  startedMessage.style.display = "inherit"
+  startedMessage.style.display = "inherit";
   startGame();
   word = randomWord();
   drawSpaces(word);
@@ -56,8 +61,7 @@ const start = () => {
     startedMessage.classList.remove("started_message_show");
     startedMessage.innerHTML = "";
     startedMessage.remove();
-  }
-  , 1600);
+  }, 1600);
   window.scrollTo(0, 120);
 };
 
@@ -110,6 +114,14 @@ const addLetterInWritedLetters = (letter) => {
   let ammountOfletterInWritedLetters = writedLetters
     .split("")
     .filter((el) => el === letter).length;
+    if(writedLetters.includes(letter) && ammountOfletterInWritedLetters === ammountOfLetterInWord) {
+      you_repeated_letter_message.style.display = "inherit";
+      you_repeated_letter_message.classList.add("you_repeated_letter_message_show");
+      setTimeout(() => {
+        you_repeated_letter_message.style.display = "none";
+      }
+      , 800);
+    }
   if (ammountOfLetterInWord > ammountOfletterInWritedLetters) {
     writedLetters += letter;
   }
@@ -124,21 +136,21 @@ const checkLetter = (letter) => {
     }
   }
 
-  // comprobe if mobile
-
-  if (correct) {
+  if (correct && writedLetters.includes(letter) === false) {
     you_are_acerted_message.style.display = "inherit";
     you_are_acerted_message.classList.add("you_are_acerted_message_show");
     setTimeout(() => {
       you_are_acerted_message.style.display = "none";
     }, 800);
-  } else {
+  }
+  else if (!correct && failLetters.includes(letter) === false) {
     you_are_wrong_message.style.display = "inherit";
     you_are_wrong_message.classList.add("you_are_wrong_message_show");
     setTimeout(() => {
       you_are_wrong_message.style.display = "none";
     }, 800);
   }
+
 
   return correct;
 };
@@ -173,7 +185,7 @@ function openKeyBoard() {
 function closeKeyBoard() {
   let dummyInput = document.querySelector("#dummy_input");
   dummyInput.blur();
-};
+}
 
 function focusOnDummyInput() {
   let dummyInput = document.querySelector("#dummy_input");
@@ -239,5 +251,5 @@ document.addEventListener("keyup", (e) => {
   // comprobe if Mobile or Desktop
   if (window.innerWidth < 600) {
     closeKeyBoard();
-  };
+  }
 });
