@@ -192,7 +192,6 @@ document.addEventListener("keyup", (e) => {
     letter = dummyInput.value.toUpperCase();
   }
 
-  if (true) {
     for (let i = 0; i < word.length; i++) {
       if (word[i] === letter) {
         hit = true;
@@ -207,7 +206,6 @@ document.addEventListener("keyup", (e) => {
         addLetterInWritedLetters(letter);
       }
     }
-  }
   dummyInput.value = "";
   drawFail(checkLetter(letter), letter);
 
