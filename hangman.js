@@ -227,7 +227,7 @@ document.addEventListener("keyup", (e) => {
     for (let i = 0; i < word.length; i++) {
       if (word[i] === letter) {
         hit = true;
-        ctx.fillStyle = "#000";
+        ctx.fillStyle = "#0a3871";
         ctx.font = `${fontSize}px Arial`;
         ctx.textAlign = "center";
         ctx.fillText(
