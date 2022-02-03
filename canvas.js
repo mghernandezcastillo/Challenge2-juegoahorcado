@@ -103,11 +103,11 @@ const drawFail = (flag, letter) => {
     failsCounter===2 ? drawRoof() : null;
     failsCounter===3 ? drawRope() : null;
     failsCounter===4 ? drawHead() : null;
-    failsCounter===5 ? drawBody() : null;
-    failsCounter===6 ? drawFirstLeg() : null;
-    failsCounter===7 ? drawSecondLeg() : null;
-    failsCounter===8 ? drawFirstArm() : null;
-    failsCounter===9 ? drawSecondArm() : null;
+    failsCounter===5 ? drawFirstArm() : null;
+    failsCounter===6 ? drawSecondArm() : null;
+    failsCounter===7 ? drawBody() : null;
+    failsCounter===8 ? drawFirstLeg() : null;
+    failsCounter===9 ? drawSecondLeg() : null;
     failLetters += letter;
     drawFailsLetters(failLetters.split("").join(" "));
   }
@@ -118,7 +118,7 @@ const drawWinMessage = () => {
   ctx.fillStyle = "darkgreen";
   // comprobe if mobile
   if (window.innerWidth < 600) {
-    ctx.font = `${fontSize + 50}px Amatic SC, cursive`;
+    ctx.font = `${fontSize + 60}px Amatic SC, cursive`;
   } else {
   ctx.font = `bold ${fontSize}px Amatic SC, cursive`;
   }
@@ -134,7 +134,7 @@ const drawLostMessage = () => {
   ctx.fillStyle = "#ff0000";
   // comprobe if mobile
   if (window.innerWidth < 600) {
-    ctx.font = `${fontSize + 50}px Amatic SC, cursive`;
+    ctx.font = `${fontSize + 60}px Amatic SC, cursive`;
   } else {
   ctx.font = `bold ${fontSize}px Amatic SC, cursive`;
   }
