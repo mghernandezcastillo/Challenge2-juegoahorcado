@@ -159,7 +159,6 @@ function openKeyBoard() {
 function focusOnDummyInput() {
   let dummyInput = document.querySelector("#dummy_input");
   dummyInput.focus();
-  alert("Pulsa una tecla para continuar");
 };
 
 // Event Listeners
@@ -214,9 +213,10 @@ document.addEventListener("keyup", (e) => {
 
   if (checkIfWon()) {
     drawWinMessage();
+    focusOnDummyInput();
   }
   if (checkIfLost()) {
     drawLostMessage();
+    focusOnDummyInput();
   }
-  focusOnDummyInput();
 });
