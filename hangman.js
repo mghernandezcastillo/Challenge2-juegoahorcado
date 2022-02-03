@@ -193,6 +193,7 @@ document.addEventListener("keyup", (e) => {
   }
 
   if (checkLetter(letter)) {
+    alert("Correct");
     for (let i = 0; i < word.length; i++) {
       if (word[i] === letter) {
         hit = true;
