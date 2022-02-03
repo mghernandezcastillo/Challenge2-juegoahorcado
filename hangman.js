@@ -30,7 +30,7 @@ const drawSpaces = (word) => {
   // draw "_" for each letter in the word in the canvas
   for (let i = 0; i < word.length; i++) {
     ctx.fillStyle = "#000";
-    ctx.font = `${fontSize}px Amatic SC`;
+    ctx.font = `${fontSize}px Arial`;
     ctx.textAlign = "center";
     ctx.fillText(
       "_",
@@ -198,7 +198,7 @@ document.addEventListener("keyup", (e) => {
       if (word[i] === letter) {
         hit = true;
         ctx.fillStyle = "#000";
-        ctx.font = `${fontSize}px Amatic SC`;
+        ctx.font = `${fontSize}px Arial`;
         ctx.textAlign = "center";
         ctx.fillText(
           letter,
