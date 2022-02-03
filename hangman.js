@@ -186,6 +186,7 @@ showWordsListLink.addEventListener("click", showWordsList);
  let dummyInput = document.querySelector("#dummy_input");
  if(dummyInput){
    letter = dummyInput.value.toUpperCase();
+   alert(letter)
  }
 
   if (checkLetter(letter)) {
@@ -213,5 +214,4 @@ showWordsListLink.addEventListener("click", showWordsList);
   if (checkIfLost()) {
     drawLostMessage();
   }
-  dummyInput = document.querySelector("#dummy_input").focus();
 });
