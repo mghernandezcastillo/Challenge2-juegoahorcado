@@ -60,6 +60,8 @@ const start = () => {
   drawFloor();
   window.scrollTo(0, 100);
   gameStarted = true;
+  openKeyBoard();
+  let dummyInput = document.querySelector("#dummy_input").focus();
 };
 
 const restart = () => {
@@ -143,6 +145,7 @@ const checkIfLost = () => {
 };
 
 function openKeyBoard(){
+ if(!dummyInputCreated){
   let dummyInput = document.createElement("input");
   dummyInput.setAttribute("type", "text");
   dummyInput.setAttribute("id", "dummy_input");
@@ -150,6 +153,7 @@ function openKeyBoard(){
   document.body.appendChild(dummyInput);
   dummyInput.focus();
   dummyInputCreated = true;
+ }
 }
 
 
@@ -158,6 +162,7 @@ function openKeyBoard(){
 // open the keyboard when the user click on the canvas
 canvas.addEventListener("click", () => {
   openKeyBoard();
+  let dummyInput = document.querySelector("#dummy_input").focus();
 });
 
 // Start Game
@@ -177,14 +182,11 @@ showWordsListLink.addEventListener("click", showWordsList);
 // Check if the letter is correct or not
   document.addEventListener("keyup", (e) => {
  // Detect the key pressed in android devices and use the keycode
- let dummyInput;
  let letter;
- if(dummyInputCreated){
-   dummyInput = document.querySelector("#dummy_input");
- }
-
+ let dummyInput = document.querySelector("#dummy_input");
  if(dummyInput){
    letter = dummyInput.value.toUpperCase();
+   console.log(letter)
  }
 
   if (checkLetter(letter)) {
@@ -202,8 +204,8 @@ showWordsListLink.addEventListener("click", showWordsList);
         addLetterInWritedLetters(letter);
       }
     }
-    dummyInput.value = "";
   }
+  dummyInput.value = "";
   drawFail(checkLetter(letter), letter);
 
   if (checkIfWon()) {
