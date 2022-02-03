@@ -213,5 +213,5 @@ showWordsListLink.addEventListener("click", showWordsList);
   if (checkIfLost()) {
     drawLostMessage();
   }
-  let dummyInput = document.querySelector("#dummy_input").focus();
+  dummyInput = document.querySelector("#dummy_input").focus();
 });
