@@ -13,6 +13,8 @@ const inputNewWord = document.querySelector("#input_new_word");
 const showWordsListLink = document.querySelector("#show_words_list_link");
 const wordsList = document.querySelector("#words_list");
 const startedMessage = document.querySelector("#started_message");
+const you_are_acerted_message = document.querySelector("#you_are_acerted_message");
+const you_are_wrong_message = document.querySelector("#you_are_wrong_message");
 let dummyInputCreated = false;
 // list of words to be used in the game
 //transform all words in array to uppercase
@@ -122,7 +124,23 @@ const checkLetter = (letter) => {
     }
   }
 
+  // comprobe if mobile
+  if (window.innerWidth < 600) {
 
+  if (correct) {
+    you_are_acerted_message.style.display = "inherit";
+    you_are_acerted_message.classList.add("you_are_acerted_message_show");
+    setTimeout(() => {
+      you_are_acerted_message.style.display = "none";
+    }, 1000);
+  } else {
+    you_are_wrong_message.style.display = "inherit";
+    you_are_wrong_message.classList.add("you_are_wrong_message_show");
+    setTimeout(() => {
+      you_are_wrong_message.style.display = "none";
+    }, 1000);
+  }
+  }
 
   return correct;
 };
