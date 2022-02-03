@@ -220,6 +220,4 @@ document.addEventListener("keyup", (e) => {
 });
 
 
-document.addEventListener("click", (e) => {
-  focusOnDummyInput();
-});
+
