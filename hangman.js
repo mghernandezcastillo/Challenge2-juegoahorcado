@@ -39,9 +39,9 @@ const drawSpaces = (word) => {
     );
   }
 };
-
 const start = () => {
   // start the game
+  startedMessage.style.display = "inherit"
   startGame();
   word = randomWord();
   drawSpaces(word);
