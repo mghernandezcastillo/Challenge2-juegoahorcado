@@ -206,7 +206,9 @@ showWordsListLink.addEventListener("click", showWordsList);
     }
   }
   dummyInput.value = "";
+  if(failLetters.includes(letter) === false){
   drawFail(checkLetter(letter), letter);
+  }
 
   if (checkIfWon()) {
     drawWinMessage();
