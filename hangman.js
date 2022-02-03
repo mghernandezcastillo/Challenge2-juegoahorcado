@@ -53,6 +53,7 @@ const start = () => {
   setTimeout(() => {
     startedMessage.classList.remove("started_message_show");
     startedMessage.innerHTML = "";
+    startedMessage.remove();
   }
   , 1000);
   window.scrollTo(0, 120);
