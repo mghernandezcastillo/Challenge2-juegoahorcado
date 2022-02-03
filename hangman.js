@@ -55,7 +55,7 @@ const start = () => {
     startedMessage.innerHTML = "";
     startedMessage.remove();
   }
-  , 1000);
+  , 1600);
   window.scrollTo(0, 120);
   
 };
