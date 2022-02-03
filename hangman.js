@@ -132,13 +132,13 @@ const checkLetter = (letter) => {
     you_are_acerted_message.classList.add("you_are_acerted_message_show");
     setTimeout(() => {
       you_are_acerted_message.style.display = "none";
-    }, 1000);
+    }, 800);
   } else {
     you_are_wrong_message.style.display = "inherit";
     you_are_wrong_message.classList.add("you_are_wrong_message_show");
     setTimeout(() => {
       you_are_wrong_message.style.display = "none";
-    }, 1000);
+    }, 800);
   }
   }
 
