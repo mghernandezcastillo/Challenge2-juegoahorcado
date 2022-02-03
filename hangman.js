@@ -222,5 +222,8 @@ document.addEventListener("keyup", (e) => {
   if (checkIfLost()) {
     drawLostMessage();
   }
-  closeKeyBoard();
+  // comprobe if Mobile or Desktop
+  if (window.innerWidth < 600) {
+    closeKeyBoard();
+  };
 });
