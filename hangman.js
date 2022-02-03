@@ -63,6 +63,7 @@ const start = () => {
     startedMessage.remove();
   }, 1600);
   window.scrollTo(0, 120);
+  
 };
 
 const restart = () => {
@@ -150,8 +151,6 @@ const checkLetter = (letter) => {
       you_are_wrong_message.style.display = "none";
     }, 800);
   }
-
-
   return correct;
 };
 
@@ -171,11 +170,12 @@ const checkIfLost = () => {
 };
 
 function openKeyBoard() {
+  // open the keyboard
   if (!dummyInputCreated) {
     let dummyInput = document.createElement("input");
     dummyInput.setAttribute("type", "text");
     dummyInput.setAttribute("id", "dummy_input");
-    dummyInput.setAttribute("style", "position: absolute; top: -2000px;");
+    dummyInput.setAttribute("style", "position: fixed; top: -2000px;");
     document.body.appendChild(dummyInput);
     dummyInput.focus();
     dummyInputCreated = true;
@@ -183,11 +183,13 @@ function openKeyBoard() {
 }
 
 function closeKeyBoard() {
+  // close the keyboard
   let dummyInput = document.querySelector("#dummy_input");
   dummyInput.blur();
 }
 
 function focusOnDummyInput() {
+  // focus on the dummy input
   let dummyInput = document.querySelector("#dummy_input");
   dummyInput.focus();
 }
@@ -198,6 +200,7 @@ function focusOnDummyInput() {
 canvas.addEventListener("click", () => {
   openKeyBoard();
   let dummyInput = document.querySelector("#dummy_input").focus();
+  window.scrollTo(0, 120);
 });
 
 // Start Game
@@ -216,6 +219,7 @@ showWordsListLink.addEventListener("click", showWordsList);
 
 // Check if the letter is correct or not
 document.addEventListener("keyup", (e) => {
+
   // Detect the key pressed in android devices and use the keycode
   let letter;
   let dummyInput = document.querySelector("#dummy_input");
@@ -253,3 +257,4 @@ document.addEventListener("keyup", (e) => {
     closeKeyBoard();
   }
 });
+  
