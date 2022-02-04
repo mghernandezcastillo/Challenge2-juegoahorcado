@@ -63,7 +63,12 @@ const start = () => {
     startedMessage.innerHTML = "";
     startedMessage.remove();
   }, 1600);
-  window.scrollTo(0, 120);
+  //comprobe if mobile
+  if (window.innerWidth < 600) {
+    window.scrollTo(0, 0);
+  } else {
+    window.scrollTo(0, 120);
+  }
 };
 
 const restart = () => {
