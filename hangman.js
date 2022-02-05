@@ -211,11 +211,11 @@ canvas.addEventListener("click", (e) => {
   } 
 });
 
-canvas.addEventListener("touchstart", (e) => {
+canvas.ontouchstart = (e) => {
   if (e.offsetX < 340 && e.offsetY < 50) {
     RevealWord(word)
   }
-});
+};
 
 // Start Game
 startButton.addEventListener("click", start);
