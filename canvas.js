@@ -85,6 +85,67 @@ const drawFirstArm = () => drawLine(canvasWidth / 2, 164, 550, 240);
 
 const drawSecondArm = () => drawLine(canvasWidth / 2, 164, 650, 240);
 
+const drawHeart = (fromx, fromy, tox, toy,lw,hlen,color) =>{
+  var x = fromx;
+  var y = fromy;
+  var width = lw ;
+  var height = hlen;
+  x = canvasWidth - 200;
+  y = canvasHeight - canvasHeight;
+  tox = 100;
+  toy = 100;
+  width = 100;
+  height = 50;
+  color = "red";
+  ctx.save();
+  ctx.beginPath();
+  var topCurveHeight = height * 0.3;
+  ctx.moveTo(x, y + topCurveHeight);
+  // top left curve
+  ctx.bezierCurveTo(
+    x, y, 
+    x - width / 2, y, 
+    x - width / 2, y + topCurveHeight
+  );
+
+  // bottom left curve
+  ctx.bezierCurveTo(
+    x - width / 2, y + (height + topCurveHeight) / 2, 
+    x, y + (height + topCurveHeight) / 2, 
+    x, y + height
+  );
+
+  // bottom right curve
+  ctx.bezierCurveTo(
+    x, y + (height + topCurveHeight) / 2, 
+    x + width / 2, y + (height + topCurveHeight) / 2, 
+    x + width / 2, y + topCurveHeight
+  );
+
+  // top right curve
+  ctx.bezierCurveTo(
+    x + width / 2, y, 
+    x, y, 
+    x, y + topCurveHeight
+  );
+
+  ctx.closePath();
+  ctx.fillStyle = color;
+  ctx.fill();
+  ctx.restore();
+
+}
+
+const drawLives = (lives) => {
+  ctx.clearRect(1100, 0, 300, 55);
+  drawRect(1100, 0, 300, 55, "lightblue");
+  // draw the lives
+  ctx.fillStyle = "black";
+  ctx.font = `50px Arial`;
+  ctx.textAlign = "center";
+  ctx.fillText(lives, canvasWidth - fontSize, canvasHeight - canvasHeight + fontSize - 25);
+};
+
 
 
 const drawFail = (flag, letter) => {
@@ -98,6 +159,8 @@ const drawFail = (flag, letter) => {
   }
   // draw the hangman when the user fails
   if (!flag && failLetters.includes(letter) === false) {
+    lives--;
+    drawLives(lives);
     failsCounter++;
     failsCounter===1 ? drawTrunk() : null;
     failsCounter===2 ? drawRoof() : null;

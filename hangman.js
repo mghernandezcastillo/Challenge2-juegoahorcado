@@ -3,6 +3,7 @@ let word = "";
 let fontSize = 70;
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
+let lives = 9;
 let failsCounter = 0;
 let gameStarted = false;
 let failLetters = "";
@@ -53,6 +54,8 @@ const start = () => {
   word = randomWord();
   drawSpaces(word);
   drawFloor();
+  drawHeart();
+  drawLives(lives);
   gameStarted = true;
   openKeyBoard();
   let dummyInput = document.querySelector("#dummy_input");

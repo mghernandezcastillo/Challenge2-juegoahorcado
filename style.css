@@ -204,8 +204,6 @@ body {
   transition: all 0.4s ease-in-out;
 }
 
-
-
 /* canvas hidden */
 #canvas {
   display: none;
