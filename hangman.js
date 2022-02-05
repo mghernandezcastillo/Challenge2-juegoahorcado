@@ -37,7 +37,7 @@ const randomWord = () => {
 const drawSpaces = (word) => {
   // draw "_" for each letter in the word in the canvas
   for (let i = 0; i < word.length; i++) {
-    ctx.fillStyle = "#000033";
+    ctx.fillStyle = "#ffffff";
     ctx.font = `${fontSize}px Arial`;
     ctx.textAlign = "center";
     ctx.fillText(
@@ -241,7 +241,7 @@ document.addEventListener("keyup", (e) => {
     for (let i = 0; i < word.length; i++) {
       if (word[i] === letter) {
         hit = true;
-        ctx.fillStyle = "#0a3871";
+        ctx.fillStyle = "#1ca728";
         ctx.font = `${fontSize}px Arial`;
         ctx.textAlign = "center";
         ctx.fillText(

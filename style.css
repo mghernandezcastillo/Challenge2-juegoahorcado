@@ -145,7 +145,7 @@ body {
   background-Color: transparent;
   border: none;
   font-size: 50px;
-  color: #0a3871;
+  color: #ffffff;
   font-family: Arial;
   text-align: center;
   line-height: 100px;
@@ -164,7 +164,7 @@ body {
   font-size: 50px;
   color: #1ca728;
   font-family: Arial;
-  text-align: center;
+  text-align: center;a
   line-height: 38px;
   transition: all 0.4s ease-in-out;
 }
@@ -179,7 +179,7 @@ body {
   border: none;
   cursor: pointer;
   font-size: 50px;
-  color: #a81919;
+  color: #f30a0a;
   font-family: Arial;
   text-align: center;
   line-height: 38px;
@@ -196,7 +196,7 @@ body {
   border: none;
   cursor: pointer;
   font-size: 50px;
-  color: #a81919;
+  color: #f30a0a;
   font-family: Arial;
   text-align: center;
   line-height: 38px;
@@ -206,7 +206,7 @@ body {
 /* canvas hidden */
 #canvas {
   display: none;
-  border: 1px solid #000000;
+  border: 1px solid #ffffff000;
   margin: auto;
 }
 
@@ -249,7 +249,7 @@ body {
     border: none;
     cursor: pointer;
     font-size: 30px;
-    color: #0a3871;
+    color: #1ca728;
     font-family: Arial;
     text-align: center;
     line-height: 100px;

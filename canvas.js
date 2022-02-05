@@ -19,7 +19,8 @@ const hideContainer = () => {
 
 const fillCanvas = () => {
   // fill canvas
-  ctx.fillStyle = "lightblue";
+  // degrade color
+  ctx.fillStyle = "#282525";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 };
 
@@ -39,6 +40,7 @@ const drawRect = (x, y, width, height, color) => {
 const drawLine = (x1, y1, x2, y2) => {
   // draw a line
   ctx.beginPath();
+  ctx.strokeStyle = "#ffffff";
   ctx.moveTo(x1, y1);
   ctx.lineTo(x2, y2);
   ctx.lineWidth = 10;
@@ -47,7 +49,7 @@ const drawLine = (x1, y1, x2, y2) => {
 
 const drawFailsLetters = (word) => {
   ctx.clearRect(0, canvasHeight - 265, canvasWidth, canvasHeight);
-  drawRect(0, canvasHeight - 265, canvasWidth, canvasHeight, "lightblue");
+  drawRect(0, canvasHeight - 265, canvasWidth, canvasHeight, "#282525");
   // draw the letters that the user has already used
   ctx.fillStyle = "gray";
   ctx.font = `${fontSize}px Arial`;
@@ -56,13 +58,13 @@ const drawFailsLetters = (word) => {
 };
 
 // Functions to draw the hangman
-const drawFloor = () =>  drawRect((canvasWidth - 400) / 2, 400, 400, 10, "#000");
+const drawFloor = () =>  drawRect((canvasWidth - 400) / 2, 400, 400, 10, "#ffffff");
 
-const drawTrunk = () => drawRect((canvasWidth - 400) / 2, 400, 10, -370, "#000");
+const drawTrunk = () => drawRect((canvasWidth - 400) / 2, 400, 10, -370, "#ffffff");
 
-const drawRoof = () => drawRect((canvasWidth - 400) / 2, 30, 250, -10, "#000");
+const drawRoof = () => drawRect((canvasWidth - 400) / 2, 30, 250, -10, "#ffffff");
 
-const drawRope = () => drawRect(canvasWidth / 2 - 5, 30, 10, 55, "#000");
+const drawRope = () => drawRect(canvasWidth / 2 - 5, 30, 10, 55, "#ffffff");
 
 const drawHead = () => {
   // draw the head
@@ -75,7 +77,7 @@ const drawHead = () => {
   ctx.stroke();
 };
 
-const drawBody = () => drawRect(canvasWidth / 2 - 5, 164, 10, 150, "#000");
+const drawBody = () => drawRect(canvasWidth / 2 - 5, 164, 10, 150, "#ffffff");
 
 const drawFirstLeg = () => drawLine(canvasWidth / 2, 310, 550, 380);
 
@@ -138,9 +140,9 @@ const drawHeart = (fromx, fromy, tox, toy,lw,hlen,color) =>{
 
 const drawLives = (lives) => {
   ctx.clearRect(1100, 0, 300, 85);
-  drawRect(1100, 0, 300, 85, "lightblue");
+  drawRect(1100, 0, 300, 85, "#282525");
   // draw the lives
-  ctx.fillStyle = "black";
+  ctx.fillStyle = "#f30a0a";
   ctx.font = `50px Arial`;
   ctx.textAlign = "center";
   ctx.fillText(lives, canvasWidth - fontSize, canvasHeight - canvasHeight + 30 + fontSize - 25);
@@ -148,15 +150,15 @@ const drawLives = (lives) => {
 
 const RevealWord = (word) => {
   ctx.clearRect(0, 0, 500, fontSize);
-  drawRect(0, 0, 500, fontSize, "lightblue");
-  ctx.fillStyle = "black";
+  drawRect(0, 0, 500, fontSize, "#282525");
+  ctx.fillStyle = "gray";
   ctx.font = `bold ${fontSize/2}px Arial`;
   ctx.textAlign = "center";
   ctx.fillText(word, 200, fontSize);
 };
 
 const RevealWordButton = () => {
-  ctx.fillStyle = "green";
+  ctx.fillStyle = "gray";
   ctx.font = `bold ${fontSize/2}px Arial`;
   ctx.textAlign = "center";
   ctx.fillText(`Revelar Palabra`, 200, fontSize);
@@ -192,7 +194,7 @@ const drawFail = (flag, letter) => {
 
 const drawWinMessage = () => {
   // draw the win message
-  ctx.fillStyle = "darkgreen";
+  ctx.fillStyle = "#1ca728";
   // comprobe if mobile
   if (window.innerWidth < 600) {
     ctx.font = `bold ${fontSize + 60}px Amatic SC, cursive`;
@@ -217,7 +219,7 @@ const drawLostMessage = () => {
   }
   ctx.textAlign = "center";
   ctx.fillText("Fin del Juego!", 900, canvasHeight / 4);
-  ctx.fillStyle = "#000";
+  ctx.fillStyle = "#ffffff";
   ctx.font = `45px Arial`;
   ctx.textAlign = "center";
   ctx.fillText(`La palabra era: ${word}`, 900, canvasHeight / 4 + 100);
