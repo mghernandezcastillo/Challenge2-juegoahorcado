@@ -91,7 +91,7 @@ const drawHeart = (fromx, fromy, tox, toy,lw,hlen,color) =>{
   var width = lw ;
   var height = hlen;
   x = canvasWidth - 200;
-  y = canvasHeight - canvasHeight;
+  y = canvasHeight - canvasHeight+30;
   tox = 100;
   toy = 100;
   width = 100;
@@ -137,13 +137,13 @@ const drawHeart = (fromx, fromy, tox, toy,lw,hlen,color) =>{
 }
 
 const drawLives = (lives) => {
-  ctx.clearRect(1100, 0, 300, 55);
-  drawRect(1100, 0, 300, 55, "lightblue");
+  ctx.clearRect(1100, 0, 300, 85);
+  drawRect(1100, 0, 300, 85, "lightblue");
   // draw the lives
   ctx.fillStyle = "black";
   ctx.font = `50px Arial`;
   ctx.textAlign = "center";
-  ctx.fillText(lives, canvasWidth - fontSize, canvasHeight - canvasHeight + fontSize - 25);
+  ctx.fillText(lives, canvasWidth - fontSize, canvasHeight - canvasHeight + 30 + fontSize - 25);
 };
 
 const RevealWord = (word) => {
@@ -152,14 +152,14 @@ const RevealWord = (word) => {
   ctx.fillStyle = "black";
   ctx.font = `bold ${fontSize/2}px Arial`;
   ctx.textAlign = "center";
-  ctx.fillText(word, 200, fontSize-30);
+  ctx.fillText(word, 200, fontSize);
 };
 
 const RevealWordButton = () => {
   ctx.fillStyle = "green";
   ctx.font = `bold ${fontSize/2}px Arial`;
   ctx.textAlign = "center";
-  ctx.fillText(`Revelar Palabra`, 200, fontSize-30);
+  ctx.fillText(`Revelar Palabra`, 200, fontSize);
 };
 
 const drawFail = (flag, letter) => {

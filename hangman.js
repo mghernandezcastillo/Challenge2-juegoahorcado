@@ -206,7 +206,7 @@ canvas.addEventListener("click", (e) => {
   let dummyInput = document.querySelector("#dummy_input").focus();
   window.scrollTo(0, 120);
   // if click in top left corner
-  if (e.offsetX < 340 && e.offsetY < 50) {
+  if (e.offsetX < 340 && e.offsetY < 100) {
     RevealWord(word)
   } 
 });
