@@ -56,6 +56,7 @@ const start = () => {
   drawFloor();
   drawHeart();
   drawLives(lives);
+  RevealWordButton();
   gameStarted = true;
   openKeyBoard();
   let dummyInput = document.querySelector("#dummy_input");
@@ -200,10 +201,20 @@ function focusOnDummyInput() {
 // Event Listeners
 
 // open the keyboard when the user click on the canvas
-canvas.addEventListener("click", () => {
+canvas.addEventListener("click", (e) => {
   openKeyBoard();
   let dummyInput = document.querySelector("#dummy_input").focus();
   window.scrollTo(0, 120);
+  // if click in top left corner
+  if (e.offsetX < 340 && e.offsetY < 50) {
+    RevealWord(word)
+  } 
+});
+
+canvas.addEventListener("touchstart", (e) => {
+  if (e.offsetX < 340 && e.offsetY < 50) {
+    RevealWord(word)
+  }
 });
 
 // Start Game
@@ -219,6 +230,7 @@ addButton.addEventListener("click", addNewWord);
 
 // Show the list of words
 showWordsListLink.addEventListener("click", showWordsList);
+
 
 // Check if the letter is correct or not
 document.addEventListener("keyup", (e) => {

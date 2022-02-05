@@ -146,7 +146,21 @@ const drawLives = (lives) => {
   ctx.fillText(lives, canvasWidth - fontSize, canvasHeight - canvasHeight + fontSize - 25);
 };
 
+const RevealWord = (word) => {
+  ctx.clearRect(0, 0, 500, fontSize);
+  drawRect(0, 0, 500, fontSize, "lightblue");
+  ctx.fillStyle = "black";
+  ctx.font = `bold ${fontSize/2}px Arial`;
+  ctx.textAlign = "center";
+  ctx.fillText(word, 200, fontSize-30);
+};
 
+const RevealWordButton = () => {
+  ctx.fillStyle = "green";
+  ctx.font = `bold ${fontSize/2}px Arial`;
+  ctx.textAlign = "center";
+  ctx.fillText(`Revelar Palabra`, 200, fontSize-30);
+};
 
 const drawFail = (flag, letter) => {
   if(failLetters.includes(letter)) {
