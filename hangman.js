@@ -56,7 +56,10 @@ const start = () => {
   drawFloor();
   drawHeart();
   drawLives(lives);
-  RevealWordButton();
+  // comprobe if mobile
+  if (window.innerWidth > 600) {
+    RevealWordButton();
+  }
   gameStarted = true;
   openKeyBoard();
   let dummyInput = document.querySelector("#dummy_input");
@@ -205,18 +208,12 @@ canvas.addEventListener("click", (e) => {
   openKeyBoard();
   let dummyInput = document.querySelector("#dummy_input").focus();
   window.scrollTo(0, 120);
-  // if click in top left corner
   if (e.offsetX < 340 && e.offsetY < 100) {
     RevealWord(word)
   } 
 });
 
-canvas.ontouchstart = (e) => {
-  if (e.touches[0].clientX < 110 && e.touches[0].clientY < 50) {
-    console.log(e.touches[0].clientX, e.touches[0].clientY);
-    RevealWord(word)
-  }
-};
+
 
 // Start Game
 startButton.addEventListener("click", start);
