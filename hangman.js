@@ -212,7 +212,8 @@ canvas.addEventListener("click", (e) => {
 });
 
 canvas.ontouchstart = (e) => {
-  if (e.offsetX < 340 && e.offsetY < 50) {
+  if (e.touches[0].clientX < 110 && e.touches[0].clientY < 50) {
+    console.log(e.touches[0].clientX, e.touches[0].clientY);
     RevealWord(word)
   }
 };
