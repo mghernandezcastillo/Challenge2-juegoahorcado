@@ -56,10 +56,7 @@ const start = () => {
   drawFloor();
   drawHeart();
   drawLives(lives);
-  // comprobe if mobile
-  if (window.innerWidth > 600) {
     RevealWordButton();
-  }
   gameStarted = true;
   openKeyBoard();
   let dummyInput = document.querySelector("#dummy_input");
@@ -205,12 +202,12 @@ function focusOnDummyInput() {
 
 // open the keyboard when the user click on the canvas
 canvas.addEventListener("click", (e) => {
-  openKeyBoard();
-  let dummyInput = document.querySelector("#dummy_input").focus();
-  window.scrollTo(0, 120);
   if (e.offsetX < 340 && e.offsetY < 100) {
     RevealWord(word)
   } 
+  openKeyBoard();
+  let dummyInput = document.querySelector("#dummy_input").focus();
+  window.scrollTo(0, 120);
 });
 
 
