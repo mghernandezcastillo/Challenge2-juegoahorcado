@@ -203,6 +203,7 @@ function focusOnDummyInput() {
 // open the keyboard when the user click on the canvas
 canvas.addEventListener("click", (e) => {
   if (e.offsetX < 340 && e.offsetY < 100) {
+    console.log(e.offsetX, e.offsetY);
     RevealWord(word)
   } 
   openKeyBoard();
