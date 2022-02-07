@@ -261,13 +261,19 @@ function check(letterInput) {
 
   if (checkIfWon()) {
     drawWinMessage();
+    let dummyInput = document.querySelector("#dummy_input");
+    dummyInput.blur();
+
   }
   if (checkIfLost()) {
     drawLostMessage();
+    dummyInput.blur();
+
   }
   // comprobe if Mobile or Desktop
   if (window.innerWidth < 600) {
     closeKeyBoard();
+    let dummyInput = document.querySelector("#dummy_input");
   }
 };
 
