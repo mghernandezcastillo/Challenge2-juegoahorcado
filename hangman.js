@@ -9,6 +9,7 @@ let gameStarted = false;
 let failLetters = "";
 let writedLetters = "";
 const startButton = document.querySelector("#start_button");
+let dummyInput;
 const addButton = document.querySelector("#add_button");
 const inputNewWord = document.querySelector("#input_new_word");
 const showWordsListLink = document.querySelector("#show_words_list_link");
@@ -59,7 +60,7 @@ const start = () => {
     RevealWordButton();
   gameStarted = true;
   openKeyBoard();
-  let dummyInput = document.querySelector("#dummy_input");
+  dummyInput = document.querySelector("#dummy_input");
   dummyInput.focus();
   startedMessage.classList.add("started_message_show");
   setTimeout(() => {
@@ -68,6 +69,11 @@ const start = () => {
     startedMessage.remove();
   }, 1600);
     window.scrollTo(0, 120);
+    // event if input value changes
+  dummyInput.addEventListener("input", () => {
+    check();
+  });
+
 };
 
 const restart = () => {
@@ -230,7 +236,8 @@ showWordsListLink.addEventListener("click", showWordsList);
 
 
 // Check if the letter is correct or not
-document.addEventListener("keyup", (e) => {
+function check() {
+
   // Detect the key pressed in android devices and use the keycode
   let letter;
   let dummyInput = document.querySelector("#dummy_input");
@@ -266,5 +273,6 @@ document.addEventListener("keyup", (e) => {
   if (window.innerWidth < 600) {
     closeKeyBoard();
   }
-});
+};
+
 
