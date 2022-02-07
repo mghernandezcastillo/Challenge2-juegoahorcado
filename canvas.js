@@ -164,7 +164,7 @@ const RevealWordButton = () => {
   ctx.fillText(`Revelar Palabra`, 200, fontSize);
 };
 
-const drawFail = (flag, letter) => {
+const drawFail = (flag, letter,input) => {
   if(failLetters.includes(letter)) {
     you_repeated_letter_message.style.display = "inherit";
     you_repeated_letter_message.classList.add("you_repeated_letter_message_show");
