@@ -256,6 +256,7 @@ document.addEventListener("keyup", (e) => {
   }
   dummyInput.value = "";
   drawFail(checkLetter(letter), letter);
+  focusOnDummyInput();
 
   if (checkIfWon()) {
     drawWinMessage();

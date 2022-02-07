@@ -81,7 +81,6 @@ const bancoDePalabras = [
     "Caballo",
     "Cabeza",
     "Adelgazar",
-    "Obelisco",
     "Malo",
     "Pastel",
     "Venecia",

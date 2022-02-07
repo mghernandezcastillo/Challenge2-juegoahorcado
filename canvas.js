@@ -55,7 +55,6 @@ const drawFailsLetters = (word) => {
   ctx.font = `${fontSize}px Arial`;
   ctx.textAlign = "center";
   ctx.fillText(word, canvasWidth / 2, canvasHeight - 190);
-  alert(word);
 };
 
 // Functions to draw the hangman
