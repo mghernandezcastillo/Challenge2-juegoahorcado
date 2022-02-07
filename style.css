@@ -38,7 +38,8 @@ body {
 
 .dummy_input {
   position: absolute;
-  top: -2000px;
+/*   top: -2000px; */
+  top: 0;
 }
 
 .instructions {
