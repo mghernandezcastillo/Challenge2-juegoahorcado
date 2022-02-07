@@ -92,7 +92,7 @@ const drawHeart = (fromx, fromy, tox, toy,lw,hlen,color) =>{
   var y = fromy;
   var width = lw ;
   var height = hlen;
-  x = canvasWidth - 200;
+  x = canvasWidth - 400;
   y = canvasHeight - canvasHeight+30;
   tox = 100;
   toy = 100;
@@ -139,13 +139,13 @@ const drawHeart = (fromx, fromy, tox, toy,lw,hlen,color) =>{
 }
 
 const drawLives = (lives) => {
-  ctx.clearRect(1100, 0, 300, 85);
-  drawRect(1100, 0, 300, 85, "#282525");
+  ctx.clearRect(900, 0, 300, 85);
+  drawRect(900, 0, 300, 85, "#282525");
   // draw the lives
   ctx.fillStyle = "#f30a0a";
   ctx.font = `50px Arial`;
   ctx.textAlign = "center";
-  ctx.fillText(lives, canvasWidth - fontSize, canvasHeight - canvasHeight + 30 + fontSize - 25);
+  ctx.fillText(lives, canvasWidth - fontSize-200, canvasHeight - canvasHeight + 30 + fontSize - 25);
 };
 
 const RevealWord = (word) => {
