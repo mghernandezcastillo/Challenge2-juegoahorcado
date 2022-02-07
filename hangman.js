@@ -71,7 +71,7 @@ const start = () => {
     window.scrollTo(0, 120);
     // event if input value changes
   dummyInput.addEventListener("input", () => {
-    check();
+    check(dummyInput.value);
   });
 
 };
@@ -236,14 +236,10 @@ showWordsListLink.addEventListener("click", showWordsList);
 
 
 // Check if the letter is correct or not
-function check() {
+function check(letterInput) {
 
-  // Detect the key pressed in android devices and use the keycode
-  let letter;
-  let dummyInput = document.querySelector("#dummy_input");
-  if (dummyInput) {
-    letter = dummyInput.value.toUpperCase();
-  }
+  let letter = letterInput.toUpperCase();
+  
 
   if (checkLetter(letter)) {
     for (let i = 0; i < word.length; i++) {
