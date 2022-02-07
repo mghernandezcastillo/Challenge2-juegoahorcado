@@ -189,6 +189,7 @@ function openKeyBoard() {
 function closeKeyBoard() {
   // close the keyboard
   let dummyInput = document.querySelector("#dummy_input");
+  dummyInput.value = "";
   //dummyInput.blur();
 }
 
