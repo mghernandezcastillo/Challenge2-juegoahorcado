@@ -273,8 +273,9 @@ function check(letterInput) {
   // comprobe if Mobile or Desktop
   if (window.innerWidth < 600) {
     closeKeyBoard();
-    let dummyInput = document.querySelector("#dummy_input");
   }
+
+  dummyInput.value = "";
 };
 
 

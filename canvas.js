@@ -164,7 +164,7 @@ const RevealWordButton = () => {
   ctx.fillText(`Revelar Palabra`, 200, fontSize);
 };
 
-const drawFail = (flag, letter,input) => {
+const drawFail = (flag, letter) => {
   if(failLetters.includes(letter)) {
     you_repeated_letter_message.style.display = "inherit";
     you_repeated_letter_message.classList.add("you_repeated_letter_message_show");
@@ -188,7 +188,7 @@ const drawFail = (flag, letter,input) => {
     failsCounter===8 ? drawFirstLeg() : null;
     failsCounter===9 ? drawSecondLeg() : null;
     failLetters += letter;
-    drawFailsLetters(failLetters.split("").join(" "));
+    drawFailsLetters(failLetters.split("").filter((item, index, self) => self.indexOf(item) === index).join(""));
   }
 };
 
