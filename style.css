@@ -237,7 +237,7 @@ body {
 @media screen and (max-width: 600px) {
   #canvas {
     width: 100%;
-    height: 20rem;
+    height: 95vh;
 
   }
 
@@ -259,25 +259,4 @@ body {
 }
 
 
-@media screen and (max-height: 600px) {
-  #canvas {
-    width: 100%;
-    height: 100vh;
-  }
 
-  .restart_button {
-    top: 30px;
-    left: 250px;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background-Color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 30px;
-    color: #1ca728;
-    font-family: Arial;
-    text-align: center;
-    line-height: 100px;
-  }
-}
