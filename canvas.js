@@ -66,6 +66,10 @@ const drawRoof = () => drawRect((canvasWidth - 400) / 2, 30, 250, -10, "#ffffff"
 
 const drawRope = () => drawRect(canvasWidth / 2 - 5, 30, 10, 55, "#ffffff");
 
+
+
+const drawBody = () => drawRect(canvasWidth / 2 - 5, 164, 10, 150, "#ffffff");
+
 const drawHead = () => {
   // draw the head
   ctx.beginPath();
@@ -75,9 +79,22 @@ const drawHead = () => {
   ctx.lineWidth = 5;
   ctx.strokeStyle = "black";
   ctx.stroke();
+  // draw the eyes
+  ctx.beginPath();
+  ctx.arc(canvasWidth / 2 - 10, 110, 5, 0, Math.PI * 2, false);
+  ctx.fillStyle = "black";
+  ctx.fill();
+  ctx.beginPath();
+  ctx.arc(canvasWidth / 2 + 10, 110, 5, 0, Math.PI * 2, false);
+  ctx.fillStyle = "black";
+  ctx.fill();
+  // draw the mouth
+  ctx.beginPath();
+  ctx.arc(canvasWidth / 2, 120, 10, 0, Math.PI, false);
+  ctx.fillStyle = "black";
+  ctx.fill();
 };
 
-const drawBody = () => drawRect(canvasWidth / 2 - 5, 164, 10, 150, "#ffffff");
 
 const drawFirstLeg = () => drawLine(canvasWidth / 2, 310, 550, 380);
 
