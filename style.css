@@ -258,4 +258,30 @@ body {
 }
 
 
+/* media query for laptop */
+@media screen and (min-width: 600px) {
+  #canvas {
+    width: 100%;
+    height: 90vh;
+
+  }
+
+  .restart_button {
+    top: 30px;
+    left: 85px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-Color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: #1ca728;
+    font-family: Arial;
+    text-align: center;
+    line-height: 100px;
+  }
+}
+
+
 
