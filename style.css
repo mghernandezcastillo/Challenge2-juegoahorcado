@@ -246,7 +246,7 @@ body {
     top: 50%;
     left: 70%;
     transform: translate(-50%, -50%);
-    width: 100%;
+    width: 100vh;
     height: 100%;
     z-index: 1;
     background-Color: transparent;
