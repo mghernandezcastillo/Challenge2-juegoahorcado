@@ -237,7 +237,8 @@ body {
 @media screen and (max-width: 600px) {
   #canvas {
     width: 100%;
-    height: 50vh;
+    height: 20rem;
+
   }
 
   .restart_button {
