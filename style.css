@@ -241,9 +241,9 @@ body {
   }
 
   .restart_button {
-    top: 13px;
-    left: 85px;
-    width: 100%;
+    top: 0px;
+    left: -50px;
+    width: 100vh;
     height: 100%;
     z-index: 1;
     background-Color: transparent;
