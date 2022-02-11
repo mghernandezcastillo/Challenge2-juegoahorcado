@@ -15,17 +15,13 @@ const inputNewWord = document.querySelector("#input_new_word");
 const showWordsListLink = document.querySelector("#show_words_list_link");
 const wordsList = document.querySelector("#words_list");
 const startedMessage = document.querySelector("#started_message");
-const you_are_acerted_message = document.querySelector(
-  "#you_are_acerted_message"
-);
+const you_are_acerted_message = document.querySelector("#you_are_acerted_message");
 const you_are_wrong_message = document.querySelector("#you_are_wrong_message");
-const you_repeated_letter_message = document.querySelector(
-  "#you_repeated_letter_message"
-);
+const you_repeated_letter_message = document.querySelector("#you_repeated_letter_message");
 let dummyInputCreated = false;
+
 // list of words to be used in the game
-//transform all words in array to uppercase
-const words = bancoDePalabras.map((word) => word.toUpperCase());
+const words = bancoDePalabras.map((word) => word.toUpperCase()); //transform all words in array to uppercase
 
 // Functions
 
@@ -57,7 +53,7 @@ const start = () => {
   drawFloor();
   drawHeart();
   drawLives(lives);
-    RevealWordButton();
+  RevealWordButton();
   gameStarted = true;
   openKeyBoard();
   dummyInput = document.querySelector("#dummy_input");
@@ -68,12 +64,11 @@ const start = () => {
     startedMessage.innerHTML = "";
     startedMessage.remove();
   }, 1600);
-    window.scrollTo(0, 120);
-    // event if input value changes
+  window.scrollTo(0, 120);
+  // event if input value changes
   dummyInput.addEventListener("input", () => {
     check(dummyInput.value);
   });
-
 };
 
 const restart = () => {
@@ -125,14 +120,18 @@ const addLetterInWritedLetters = (letter) => {
   let ammountOfletterInWritedLetters = writedLetters
     .split("")
     .filter((el) => el === letter).length;
-    if(writedLetters.includes(letter) && ammountOfletterInWritedLetters === ammountOfLetterInWord) {
-      you_repeated_letter_message.style.display = "inherit";
-      you_repeated_letter_message.classList.add("you_repeated_letter_message_show");
-      setTimeout(() => {
-        you_repeated_letter_message.style.display = "none";
-      }
-      , 800);
-    }
+  if (
+    writedLetters.includes(letter) &&
+    ammountOfletterInWritedLetters === ammountOfLetterInWord
+  ) {
+    you_repeated_letter_message.style.display = "inherit";
+    you_repeated_letter_message.classList.add(
+      "you_repeated_letter_message_show"
+    );
+    setTimeout(() => {
+      you_repeated_letter_message.style.display = "none";
+    }, 800);
+  }
   if (ammountOfLetterInWord > ammountOfletterInWritedLetters) {
     writedLetters += letter;
   }
@@ -153,8 +152,11 @@ const checkLetter = (letter) => {
     setTimeout(() => {
       you_are_acerted_message.style.display = "none";
     }, 800);
-  }
-  else if (!correct && failLetters.includes(letter) === false &&gameStarted) {
+  } else if (
+    !correct &&
+    failLetters.includes(letter) === false &&
+    gameStarted
+  ) {
     you_are_wrong_message.style.display = "inherit";
     you_are_wrong_message.classList.add("you_are_wrong_message_show");
     setTimeout(() => {
@@ -211,14 +213,12 @@ function focusOnDummyInput() {
 canvas.addEventListener("click", (e) => {
   if (e.offsetX < 340 && e.offsetY < 100) {
     console.log(e.offsetX, e.offsetY);
-    RevealWord(word)
-  } 
+    RevealWord(word);
+  }
   openKeyBoard();
   let dummyInput = document.querySelector("#dummy_input").focus();
   window.scrollTo(0, 120);
 });
-
-
 
 // Start Game
 startButton.addEventListener("click", start);
@@ -234,12 +234,9 @@ addButton.addEventListener("click", addNewWord);
 // Show the list of words
 showWordsListLink.addEventListener("click", showWordsList);
 
-
 // Check if the letter is correct or not
 function check(letterInput) {
-
   let letter = letterInput.toUpperCase();
-  
 
   if (checkLetter(letter)) {
     for (let i = 0; i < word.length; i++) {
@@ -263,12 +260,10 @@ function check(letterInput) {
     drawWinMessage();
     let dummyInput = document.querySelector("#dummy_input");
     dummyInput.blur();
-
   }
   if (checkIfLost()) {
     drawLostMessage();
     dummyInput.blur();
-
   }
   // comprobe if Mobile or Desktop
   if (window.innerWidth < 600) {
@@ -276,6 +271,4 @@ function check(letterInput) {
   }
 
   dummyInput.value = "";
-};
-
-
+}
